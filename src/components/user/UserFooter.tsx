@@ -34,7 +34,6 @@ const UserFooter = () => {
       }}
     >
       <Container maxWidth="lg">
-        {/* Main Footer */}
         <Box
           sx={{
             py: 6,
@@ -49,7 +48,6 @@ const UserFooter = () => {
             },
           }}
         >
-          {/* Brand */}
           <Box
             sx={{
               flex: 2,
@@ -78,7 +76,6 @@ const UserFooter = () => {
               and everything worth reading — all in one place.
             </Typography>
 
-            {/* Social Icons */}
             <Box
               sx={{
                 display: "flex",
@@ -109,7 +106,6 @@ const UserFooter = () => {
             </Box>
           </Box>
 
-          {/* Quick Links */}
           <Box
             sx={{
               flex: 1,
@@ -148,7 +144,6 @@ const UserFooter = () => {
             </Box>
           </Box>
 
-          {/* Categories */}
           <Box
             sx={{
               flex: 1,
@@ -187,7 +182,6 @@ const UserFooter = () => {
             </Box>
           </Box>
 
-          {/* Contact */}
           <Box
             sx={{
               flex: 1,
@@ -232,7 +226,6 @@ const UserFooter = () => {
 
         <Divider sx={{ borderColor: "#374151" }} />
 
-        {/* Bottom Footer */}
         <Box
           sx={{
             py: 2.5,

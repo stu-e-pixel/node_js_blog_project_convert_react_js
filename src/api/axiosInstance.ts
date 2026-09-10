@@ -7,12 +7,12 @@ interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
   _retry?: boolean;
 }
 
-// ✅ baseURL থেকে /api বাদ দিন
+
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3016";
 console.log('📡 API Base URL:', API_URL);
 
 const api = axios.create({
-  baseURL: API_URL, // শুধু http://localhost:3016
+  baseURL: API_URL,
   headers: {
     "Content-Type": "application/json",
     "Accept": "application/json",
@@ -21,10 +21,10 @@ const api = axios.create({
   timeout: 30000,
 });
 
-// Request Interceptor
+
 api.interceptors.request.use(
   (config) => {
-    // ✅ Debug log - দেখুন কোন URL এ request যাচ্ছে
+    
     console.log(`🚀 ${config.method?.toUpperCase()} ${config.baseURL}${config.url}`);
     
     const accessToken = Cookies.get("accessToken");
@@ -49,14 +49,14 @@ api.interceptors.request.use(
   }
 );
 
-// Response Interceptor
+
 api.interceptors.response.use(
   (response) => {
-    console.log(`✅ ${response.config.url} - Status: ${response.status}`);
+    console.log(` ${response.config.url} - Status: ${response.status}`);
     return response;
   },
   async (error: AxiosError) => {
-    console.error('❌ Response Error:', {
+    console.error(' Response Error:', {
       status: error.response?.status,
       data: error.response?.data,
       url: error.config?.url,
@@ -73,7 +73,7 @@ api.interceptors.response.use(
     const refreshToken = Cookies.get("refreshToken");
 
     if (!refreshToken) {
-      console.log('🔐 No refresh token, redirecting to login');
+      console.log(' No refresh token, redirecting to login');
       Cookies.remove("accessToken");
       Cookies.remove("refreshToken");
       Cookies.remove("secretKey");
@@ -84,7 +84,7 @@ api.interceptors.response.use(
     try {
       console.log('🔄 Refreshing token...');
       
-      // ✅ এখানে /api যোগ করুন কারণ baseURL এ /api নেই
+      
       const response = await axios.post(
         `${API_URL}/api/refresh-token`,
         { refreshToken },

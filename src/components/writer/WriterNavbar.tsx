@@ -66,7 +66,7 @@ const UserNavbar = () => {
           justifyContent: "space-between",
         }}
       >
-        {/* Left Side */}
+        
         <Typography
           variant="h6"
           sx={{
@@ -76,7 +76,7 @@ const UserNavbar = () => {
           Writer Panel
         </Typography>
 
-        {/* Right Side */}
+       
         <Box
           sx={{
             display: "flex",
@@ -84,7 +84,7 @@ const UserNavbar = () => {
             gap: 2,
           }}
         >
-          {/* Search */}
+
           <Box
             sx={{
               display: "flex",
@@ -125,7 +125,7 @@ const UserNavbar = () => {
             />
           </Box>
 
-          {/* Profile */}
+          
           <IconButton
             onClick={handleProfileClick}
             sx={{
@@ -144,7 +144,7 @@ const UserNavbar = () => {
             </Avatar>
           </IconButton>
 
-          {/* Dropdown */}
+          
           <Menu
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
@@ -159,7 +159,7 @@ const UserNavbar = () => {
               },
             }}
           >
-            {/* User Info */}
+           
             <Box sx={{ px: 2, py: 1.5 }}>
               <Typography
                 sx={{
@@ -181,7 +181,7 @@ const UserNavbar = () => {
 
             <Divider />
 
-            {/* My Profile */}
+           
             <MenuItem onClick={handleMyProfile}>
               <ListItemIcon>
                 <PersonIcon fontSize="small" />
@@ -190,7 +190,7 @@ const UserNavbar = () => {
               <ListItemText primary="My Profile" />
             </MenuItem>
 
-            {/* Logout */}
+            
             <MenuItem
               onClick={handleLogout}
               sx={{

@@ -180,7 +180,7 @@ console.log(
 
       toast.loading("Sending new OTP...", { id: "resend-loading" });
 
-      // Dispatch the resendVerification thunk
+      
       const result = await dispatch(
         resendVerification(verificationEmail),
       ).unwrap();

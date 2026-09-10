@@ -30,7 +30,7 @@ const AdminDashboard = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  /* ================= REDUX STATE ================= */
+  
 
   const {
     users = [],
@@ -43,7 +43,7 @@ const AdminDashboard = () => {
     loading: blogLoading,
   } = useAppSelector((state: RootState) => state.blog);
 
-  /* ================= FETCH DATA ================= */
+  
 
   useEffect(() => {
     dispatch(getAllUsersThunk());
@@ -51,7 +51,7 @@ const AdminDashboard = () => {
     dispatch(fetchMyBlogs());
   }, [dispatch]);
 
-  /* ================= NORMAL USERS ================= */
+  
 
   const normalUsers = useMemo(() => {
     return users.filter(
@@ -59,7 +59,7 @@ const AdminDashboard = () => {
     );
   }, [users]);
 
-  /* ================= BLOG COUNTS ================= */
+  
 
   const pendingBlogs = useMemo(() => {
     return blog.filter(
@@ -82,11 +82,10 @@ const AdminDashboard = () => {
     );
   }, [blog]);
 
-  /* ================= LOADING ================= */
-
+  
   const loading = authLoading || blogLoading;
 
-  /* ================= CARD WIDTH ================= */
+  
 
   const cardWrapperSx = {
     flex: {
@@ -97,7 +96,7 @@ const AdminDashboard = () => {
     minWidth: 0,
   };
 
-  /* ================= CARD STYLE ================= */
+  
 
   const clickableCardSx = {
     height: "100%",
@@ -120,7 +119,7 @@ const AdminDashboard = () => {
     boxShadow: "none",
   };
 
-  /* ================= STAT CARD CONTENT ================= */
+  
 
   const renderStatContent = (
     title: string,
@@ -198,7 +197,7 @@ const AdminDashboard = () => {
     );
   };
 
-  /* ================= LOADING SCREEN ================= */
+  
 
   if (loading && users.length === 0 && blog.length === 0) {
     return (
@@ -216,7 +215,7 @@ const AdminDashboard = () => {
     );
   }
 
-  /* ================= DASHBOARD ================= */
+  
 
   return (
     <Box
@@ -229,7 +228,7 @@ const AdminDashboard = () => {
         },
       }}
     >
-      {/* ================= HEADER ================= */}
+      
 
       <Box
         sx={{
@@ -257,7 +256,7 @@ const AdminDashboard = () => {
         </Typography>
       </Box>
 
-      {/* ================= STATS ================= */}
+      
 
       <Box
         sx={{
@@ -266,7 +265,7 @@ const AdminDashboard = () => {
           gap: 2.5,
         }}
       >
-        {/* ================= NORMAL USERS ================= */}
+        
 
         <Box sx={cardWrapperSx}>
           <Card
@@ -287,7 +286,7 @@ const AdminDashboard = () => {
           </Card>
         </Box>
 
-        {/* ================= PENDING WRITERS ================= */}
+        
 
         <Box sx={cardWrapperSx}>
           <Card
@@ -308,7 +307,7 @@ const AdminDashboard = () => {
           </Card>
         </Box>
 
-        {/* ================= TOTAL BLOGS ================= */}
+        
 
         <Box sx={cardWrapperSx}>
           <Card
@@ -329,7 +328,7 @@ const AdminDashboard = () => {
           </Card>
         </Box>
 
-        {/* ================= PENDING BLOGS ================= */}
+        
 
         <Box sx={cardWrapperSx}>
           <Card
@@ -350,7 +349,7 @@ const AdminDashboard = () => {
           </Card>
         </Box>
 
-        {/* ================= PUBLISHED BLOGS ================= */}
+        
 
         <Box sx={cardWrapperSx}>
           <Card sx={normalCardSx}>
@@ -368,7 +367,7 @@ const AdminDashboard = () => {
           </Card>
         </Box>
 
-        {/* ================= REJECTED BLOGS ================= */}
+        
 
         <Box sx={cardWrapperSx}>
           <Card sx={normalCardSx}>
@@ -387,7 +386,7 @@ const AdminDashboard = () => {
         </Box>
       </Box>
 
-      {/* ================= SUMMARY ================= */}
+      
 
       <Box
         sx={{
@@ -397,7 +396,7 @@ const AdminDashboard = () => {
           gap: 2.5,
         }}
       >
-        {/* USER SUMMARY */}
+       
 
         <Box
           sx={{
@@ -504,7 +503,7 @@ const AdminDashboard = () => {
           </Card>
         </Box>
 
-        {/* BLOG SUMMARY */}
+      
 
         <Box
           sx={{

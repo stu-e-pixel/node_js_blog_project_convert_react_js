@@ -29,19 +29,19 @@ const getRoleFromToken = (token: string): string | null => {
 const ProtectedRoute = ({ allowedRole }: ProtectedRouteProps) => {
   const { accessToken } = getAuthCookie();
 
-  // No access token
+  
   if (!accessToken) {
     return <Navigate to="/login" replace />;
   }
 
   const role = getRoleFromToken(accessToken);
 
-  // Token invalid / role missing
+  
   if (!role) {
     return <Navigate to="/login" replace />;
   }
 
-  // Wrong role
+  
   if (role !== allowedRole) {
     if (role === "admin") {
       return <Navigate to="/admin/dashboard" replace />;

@@ -96,9 +96,9 @@ export const login = createAsyncThunk(
           response.secretkey,
         );
 
-        console.log("🍪 AUTH COOKIES SET");
+        console.log(" AUTH COOKIES SET");
       } else {
-        console.error("❌ Token/secretkey missing:", {
+        console.error(" Token/secretkey missing:", {
           token: response.token,
           accessToken: response.token?.accessToken,
           refreshToken: response.token?.refreshToken,

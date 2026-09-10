@@ -44,7 +44,7 @@ const ForgotPassword = () => {
     const result = await dispatch(sendResetLink(email));
 
     if (sendResetLink.fulfilled.match(result)) {
-      // Reset link successfully sent
+      
       setEmail("");
     }
   };
@@ -69,7 +69,7 @@ const ForgotPassword = () => {
             borderRadius: 3,
           }}
         >
-          {/* Header */}
+          
           <Box
             sx={{
               display: "flex",
@@ -111,7 +111,7 @@ const ForgotPassword = () => {
             </Typography>
           </Box>
 
-          {/* Form */}
+          
           <Box component="form" onSubmit={handleSubmit}>
             <TextField
               fullWidth

@@ -143,7 +143,7 @@ const Dashboard = () => {
               lineHeight: 1.2,
             }}
           >
-            Welcome Back, Writer 👋
+            Welcome Back, Writer
           </Typography>
 
           <Typography

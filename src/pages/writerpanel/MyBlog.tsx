@@ -75,7 +75,7 @@ const MyBlog = () => {
         width: "100%",
       }}
     >
-      {/* Header */}
+      
       <Box
         sx={{
           mb: 3,
@@ -114,7 +114,7 @@ const MyBlog = () => {
         </Button>
       </Box>
 
-      {/* Loading */}
+      
       {loading && blog.length === 0 ? (
         <Box
           sx={{
@@ -127,7 +127,7 @@ const MyBlog = () => {
           <CircularProgress />
         </Box>
       ) : blog.length === 0 ? (
-        /* Empty State */
+        
         <Box
           sx={{
             minHeight: 300,
@@ -169,7 +169,7 @@ const MyBlog = () => {
           </Button>
         </Box>
       ) : (
-        /* Blog List */
+        
         <Box
           sx={{
             display: "grid",
@@ -198,7 +198,7 @@ const MyBlog = () => {
                   },
                 }}
               >
-                {/* Title + Status */}
+                
                 <Box
                   sx={{
                     display: "flex",
@@ -231,7 +231,7 @@ const MyBlog = () => {
                   />
                 </Box>
 
-                {/* Category */}
+                
                 <Typography
                   variant="body2"
                   sx={{
@@ -243,7 +243,7 @@ const MyBlog = () => {
                   {item.category}
                 </Typography>
 
-                {/* Content Preview */}
+                
                 <Typography
                   variant="body2"
                   sx={{
@@ -259,7 +259,7 @@ const MyBlog = () => {
                   {item.content}
                 </Typography>
 
-                {/* Actions */}
+                
                 <Box
                   sx={{
                     mt: 2.5,

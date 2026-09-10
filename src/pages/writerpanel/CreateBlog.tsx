@@ -76,7 +76,7 @@ const CreateBlog = () => {
           border: "1px solid #e5e7eb",
         }}
       >
-        {/* Header */}
+        
         <Box sx={{ mb: 3 }}>
           <Typography
             variant="h5"
@@ -99,7 +99,7 @@ const CreateBlog = () => {
           </Typography>
         </Box>
 
-        {/* Form */}
+        
         <form onSubmit={handleSubmit(onSubmit)}>
           <Box
             sx={{
@@ -108,7 +108,7 @@ const CreateBlog = () => {
               gap: 2.5,
             }}
           >
-            {/* Title */}
+            
             <TextField
               {...register("title")}
               label="Blog Title"
@@ -119,7 +119,7 @@ const CreateBlog = () => {
               disabled={loading}
             />
 
-            {/* Category */}
+            
             <TextField
               {...register("category")}
               label="Category"
@@ -130,7 +130,7 @@ const CreateBlog = () => {
               disabled={loading}
             />
 
-            {/* Content */}
+            
             <TextField
               {...register("content")}
               label="Blog Content"
@@ -143,7 +143,7 @@ const CreateBlog = () => {
               disabled={loading}
             />
 
-            {/* Status Info */}
+            
             <Box
               sx={{
                 p: 2,
@@ -172,7 +172,7 @@ const CreateBlog = () => {
               </Typography>
             </Box>
 
-            {/* Buttons */}
+            
             <Box
               sx={{
                 display: "flex",

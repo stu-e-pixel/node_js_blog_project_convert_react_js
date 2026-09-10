@@ -26,22 +26,18 @@ const Blog = () => {
     (state) => state.blog,
   );
 
-  // =========================
-  // CHECK LOGIN
-  // =========================
+  
 
   useEffect(() => {
     const accessToken = Cookies.get("accessToken");
 
-    // User login না করলে register page এ পাঠাবে
+    
     if (!accessToken) {
       navigate("/register", { replace: true });
     }
   }, [navigate]);
 
-  // =========================
-  // FETCH BLOGS
-  // =========================
+ 
 
   useEffect(() => {
     const accessToken = Cookies.get("accessToken");
@@ -51,17 +47,13 @@ const Blog = () => {
     }
   }, [dispatch, blog.length]);
 
-  // =========================
-  // SELECT BLOG
-  // =========================
+  
 
   const selectedBlog = blog.find(
     (item) => item._id === id,
   );
 
-  // =========================
-  // LOADING
-  // =========================
+  
 
   if (loading && !selectedBlog) {
     return (
@@ -82,9 +74,7 @@ const Blog = () => {
     );
   }
 
-  // =========================
-  // ERROR
-  // =========================
+  
 
   if (error && !selectedBlog) {
     return (
@@ -127,9 +117,7 @@ const Blog = () => {
     );
   }
 
-  // =========================
-  // BLOG NOT FOUND
-  // =========================
+
 
   if (!selectedBlog) {
     return (
@@ -184,9 +172,7 @@ const Blog = () => {
     );
   }
 
-  // =========================
-  // SINGLE BLOG
-  // =========================
+  
 
   return (
     <>
@@ -215,7 +201,7 @@ const Blog = () => {
             mx: "auto",
           }}
         >
-          {/* BACK BUTTON */}
+          
 
           <Button
             startIcon={<ArrowBackIcon />}
@@ -234,7 +220,7 @@ const Blog = () => {
             Back
           </Button>
 
-          {/* BLOG CARD */}
+          
 
           <Box
             sx={{
@@ -257,7 +243,7 @@ const Blog = () => {
                 },
               }}
             >
-              {/* CATEGORY + STATUS */}
+              
 
               <Box
                 sx={{
@@ -294,7 +280,7 @@ const Blog = () => {
                 />
               </Box>
 
-              {/* TITLE */}
+              
 
               <Typography
                 variant="h3"
@@ -314,7 +300,7 @@ const Blog = () => {
                 {selectedBlog.title || "Untitled Blog"}
               </Typography>
 
-              {/* AUTHOR */}
+              
 
               {selectedBlog.auther && (
                 <Box
@@ -364,7 +350,7 @@ const Blog = () => {
                 </Box>
               )}
 
-              {/* CREATED DATE */}
+              
 
               {selectedBlog.createdAt && (
                 <Typography
@@ -386,7 +372,7 @@ const Blog = () => {
                 </Typography>
               )}
 
-              {/* CONTENT */}
+              
 
               <Typography
                 component="div"

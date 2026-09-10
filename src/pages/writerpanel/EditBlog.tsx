@@ -43,18 +43,14 @@ const EditBlog = () => {
     },
   });
 
-  /*
-   * Blog list load করবো
-   */
+  
   useEffect(() => {
     if (!blog || blog.length === 0) {
       dispatch(fetchBlogs());
     }
   }, [dispatch, blog]);
 
-  /*
-   * URL-এর ID অনুযায়ী blog খুঁজে form-এ data বসানো
-   */
+  
   useEffect(() => {
     if (!id || !blog) return;
 
@@ -71,9 +67,7 @@ const EditBlog = () => {
     }
   }, [id, blog, reset]);
 
-  /*
-   * Update submit
-   */
+  
   const onSubmit = async (data: EditBlogFormData) => {
     if (!id) {
       return;
@@ -93,9 +87,7 @@ const EditBlog = () => {
     }
   };
 
-  /*
-   * Blog খুঁজে না পেলে
-   */
+  
   const selectedBlog = blog?.find(
     (item) => item?._id === id,
   );
@@ -161,7 +153,7 @@ const EditBlog = () => {
           borderRadius: 3,
         }}
       >
-        {/* Header */}
+        
         <Box sx={{ mb: 3 }}>
           <Typography
             variant="h5"
@@ -192,7 +184,7 @@ const EditBlog = () => {
               gap: 2.5,
             }}
           >
-            {/* Title */}
+            
             <TextField
               {...register("title", {
                 required: "Blog title is required",
@@ -210,7 +202,7 @@ const EditBlog = () => {
               disabled={loading}
             />
 
-            {/* Category */}
+            
             <TextField
               {...register("category", {
                 required: "Category is required",
@@ -223,7 +215,7 @@ const EditBlog = () => {
               disabled={loading}
             />
 
-            {/* Content */}
+            
             <TextField
               {...register("content", {
                 required: "Blog content is required",
@@ -243,7 +235,7 @@ const EditBlog = () => {
               disabled={loading}
             />
 
-            {/* Status information */}
+            
             <Box
               sx={{
                 p: 2,
@@ -275,7 +267,7 @@ const EditBlog = () => {
               </Typography>
             </Box>
 
-            {/* Buttons */}
+            
             <Box
               sx={{
                 display: "flex",
